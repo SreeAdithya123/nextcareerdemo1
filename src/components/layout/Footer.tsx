@@ -79,8 +79,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 nextcareer9@gmail.com
               </a>
-              <a href="https://instagram.com/nextcareer_education" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity">
-                <Instagram className="w-4 h-4" />
+              <a href="https://instagram.com/nextcareer_education" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity">@nextcareer_educations<Instagram className="w-4 h-4" />
                 @nextcareer_education
               </a>
               <div className="flex items-center gap-3 text-sm opacity-80">
