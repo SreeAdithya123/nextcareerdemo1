@@ -4,13 +4,16 @@ import Footer from "@/components/layout/Footer";
 import ClayCard from "@/components/ui/ClayCard";
 import ClayBadge from "@/components/ui/ClayBadge";
 
+import saikumarImage from "@/assets/team/saikumar.jpg";
+import satyasriImage from "@/assets/team/satyasri.jpg";
+
 const teamMembers = [
   {
     name: "G. Saikumar",
     role: "Chairman & Trainer",
     qualification: "M.Tech (Computer Science & Engineering)",
     experience: "10+ Years Experience",
-    avatar: "👨‍💼",
+    image: saikumarImage,
     color: "gradient-teal",
   },
   {
@@ -18,7 +21,7 @@ const teamMembers = [
     role: "Director & Trainer",
     qualification: "MBA",
     experience: "Expert in Management",
-    avatar: "👩‍💼",
+    image: satyasriImage,
     color: "gradient-orange",
   },
 ];
@@ -115,10 +118,14 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
-            <ClayCard key={index} className="p-8 text-center">
-              {/* Avatar */}
-              <div className={`w-24 h-24 mx-auto mb-6 rounded-3xl ${member.color} flex items-center justify-center text-5xl shadow-clay float-animation`} style={{ animationDelay: `${index * 0.3}s` }}>
-                {member.avatar}
+            <ClayCard key={index} className="p-6 text-center float-animation" style={{ animationDelay: `${index * 0.3}s` }}>
+              {/* Photo */}
+              <div className="overflow-hidden rounded-2xl shadow-clay mb-6">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-80 object-cover object-top"
+                />
               </div>
 
               {/* Info */}
