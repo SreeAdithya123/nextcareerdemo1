@@ -6,12 +6,14 @@ interface ClayCardProps {
   className?: string;
   hover?: boolean;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
-const ClayCard = ({ children, className, hover = true, onClick }: ClayCardProps) => {
+const ClayCard = ({ children, className, hover = true, onClick, style }: ClayCardProps) => {
   return (
     <div
       onClick={onClick}
+      style={style}
       className={cn(
         "clay-card p-6",
         hover && "cursor-pointer",
