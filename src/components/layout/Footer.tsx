@@ -1,17 +1,7 @@
 import { Link } from "react-router-dom";
-import { 
-  GraduationCap, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Instagram,
-  Award,
-  Shield
-} from "lucide-react";
-
+import { GraduationCap, Phone, Mail, MapPin, Instagram, Award, Shield } from "lucide-react";
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground mt-16">
+  return <footer className="bg-primary text-primary-foreground mt-16">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -25,10 +15,7 @@ const Footer = () => {
                 <p className="text-xs opacity-80">Computer Education</p>
               </div>
             </div>
-            <p className="text-sm opacity-80 leading-relaxed">
-              Simplify Your Life With Us. Empowering students with industry-ready 
-              skills since 2014.
-            </p>
+            <p className="text-sm opacity-80 leading-relaxed">Simplify Your Life With Us. Empowering students with industry-ready skills since 2023.</p>
             {/* Certification Badges */}
             <div className="flex gap-3 pt-2">
               <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-primary-foreground/10">
@@ -46,22 +33,27 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
             <nav className="flex flex-col gap-2">
-              {[
-                { name: "Home", path: "/" },
-                { name: "About Us", path: "/about" },
-                { name: "Courses", path: "/courses" },
-                { name: "Learning Platform", path: "/learning" },
-                { name: "Terms & Conditions", path: "/terms" },
-                { name: "Contact", path: "/contact" },
-              ].map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="text-sm opacity-80 hover:opacity-100 hover:translate-x-1 transition-all"
-                >
+              {[{
+              name: "Home",
+              path: "/"
+            }, {
+              name: "About Us",
+              path: "/about"
+            }, {
+              name: "Courses",
+              path: "/courses"
+            }, {
+              name: "Learning Platform",
+              path: "/learning"
+            }, {
+              name: "Terms & Conditions",
+              path: "/terms"
+            }, {
+              name: "Contact",
+              path: "/contact"
+            }].map(link => <Link key={link.path} to={link.path} className="text-sm opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">
                   {link.name}
-                </Link>
-              ))}
+                </Link>)}
             </nav>
           </div>
 
@@ -69,22 +61,9 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">Popular Courses</h4>
             <nav className="flex flex-col gap-2">
-              {[
-                "Python Programming",
-                "Java Development",
-                "Data Analyst",
-                "Digital Marketing",
-                "Web Designing",
-                "AI Courses",
-              ].map((course) => (
-                <Link
-                  key={course}
-                  to="/courses"
-                  className="text-sm opacity-80 hover:opacity-100 hover:translate-x-1 transition-all"
-                >
+              {["Python Programming", "Java Development", "Data Analyst", "Digital Marketing", "Web Designing", "AI Courses"].map(course => <Link key={course} to="/courses" className="text-sm opacity-80 hover:opacity-100 hover:translate-x-1 transition-all">
                   {course}
-                </Link>
-              ))}
+                </Link>)}
             </nav>
           </div>
 
@@ -92,26 +71,15 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">Contact Us</h4>
             <div className="flex flex-col gap-3">
-              <a 
-                href="tel:+919441871863" 
-                className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity"
-              >
+              <a href="tel:+919441871863" className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity">
                 <Phone className="w-4 h-4" />
                 +91 9441871863
               </a>
-              <a 
-                href="mailto:nextcareer9@gmail.com" 
-                className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity"
-              >
+              <a href="mailto:nextcareer9@gmail.com" className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity">
                 <Mail className="w-4 h-4" />
                 nextcareer9@gmail.com
               </a>
-              <a 
-                href="https://instagram.com/nextcareer_education" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity"
-              >
+              <a href="https://instagram.com/nextcareer_education" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm opacity-80 hover:opacity-100 transition-opacity">
                 <Instagram className="w-4 h-4" />
                 @nextcareer_education
               </a>
@@ -138,8 +106,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
