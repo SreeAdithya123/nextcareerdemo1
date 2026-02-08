@@ -1,123 +1,49 @@
 
+# Integration Plan: Team Member Photos on About Page
 
-# NextCareer Computer Education - Claymorphic Website
+## Overview
+You've uploaded two professional photos:
+- **Sai Kumar** (first image): Professional headshot with blazer
+- **Satya Sri** (second image): Portrait in traditional pink attire
 
-A modern, approachable institutional website featuring soft 3D clay-like design that builds trust with students and parents.
+These will replace the emoji avatars in the team member cards with rectangular profile photos that fit the claymorphic design.
 
----
+## Implementation Steps
 
-## 🎨 Design Foundation
+### 1. Copy Images to Project Assets
+- Copy both uploaded images to `src/assets/team/`
+  - `user-uploads://fc254cea-3e5e-48ea-a810-da18c6c7b80f.jpg` → `src/assets/team/saikumar.jpg`
+  - `user-uploads://c3701bbe-0b43-46cb-9670-9f08e12a1220.jpg` → `src/assets/team/satyasri.jpg`
 
-### Claymorphism Style System
-- Soft, inflated 3D surfaces with clay-like appearance
-- Large rounded corners (16px–32px)
-- Smooth pastel teal-to-cream gradients
-- Dual-layer shadows (subtle inner glow + soft outer shadow)
-- Pill-shaped buttons with press effects
-- Friendly, bubble-like icons and elements
+### 2. Update Team Members Data Structure
+Modify the `teamMembers` array in `src/pages/About.tsx`:
+- Add new `image` property pointing to imported assets
+- Keep the `color` property for subtle gradient backgrounds (used as fallback/accent)
+- Remove the `avatar` emoji property (no longer needed)
 
-### Color Theme
-- **Primary Teal** (#0F4C5C) with soft gradient overlays
-- **Accent Orange** (#F36F21) for CTAs and highlights
-- **Cream Background** (#F7F3EE) for warmth
-- **Gold** (#C9A227) for certification badges
-- **Dark Slate** (#2E2E2E) for readable text
+### 3. Create Enhanced Team Card Layout
+Restructure the team member card display:
+- **Top section**: Rectangular image container with clay styling
+  - Border radius: `rounded-2xl` (softer than full circle)
+  - Image dimensions: Full width of card (~250px), ~320px height
+  - Shadow: Apply clay shadow for depth
+  - Hover effect: Subtle lift animation
+  
+- **Bottom section**: Text information (name, role, qualifications)
+  - Add padding/spacing for better visual hierarchy
+  - Keep existing badge and experience styling
 
----
+### 4. Styling Details
+- **Image container**: Apply `overflow-hidden rounded-2xl` with `shadow-clay` for claymorphic effect
+- **Image itself**: Use `object-cover` to maintain aspect ratio within container
+- **Card background**: Retain current gradient background (teal for Sai Kumar, orange for Satya Sri)
+- **Animations**: Keep `float-animation` on the entire card for consistency
 
-## 📄 Pages Overview
+### 5. Responsive Behavior
+- Desktop (md+): Two-column grid, rectangular images side by side
+- Mobile: Single-column stack, images full responsive width
+- Maintain touch-friendly spacing and tap targets
 
-### 🏠 Home Page
-- Large hero section with floating 3D clay panel
-- Institute name "NextCareer Computer Education" with tagline
-- Animated certification badges (ISO 9001:2015, MSME)
-- Feature bubbles in a flowing grid layout:
-  - ISO Certified
-  - Experienced Faculty
-  - Job Oriented Programs
-  - Short & Long Term Courses
-  - AC Class Rooms
-- Prominent "Join Now" button with soft 3D press effect
-- Smooth scroll transitions between sections
-
-### 👤 About Us Page
-- Institute story in a rounded clay container
-- Team member cards with illustrated avatars:
-  - **G. Saikumar** – Chairman & Trainer, M.Tech CSE, 10 Years Experience
-  - **G. R. Satya Sri** – Director & Trainer, MBA
-- Soft depth shadows on profile images
-- Mission and values in bubble containers
-
-### 🎓 Courses Page
-- Grid of inflated course cards (3 columns on desktop, responsive)
-- Each card features:
-  - Clay-style icon
-  - Course title
-  - Brief description
-- Courses included:
-  - DCA, PGDCA, Python, Java, Tally
-  - Data Analyst, Digital Marketing, MS Office
-  - Web Designing, AI Courses
-  - School Special Classes (Grade 1–10)
-- Hover effect: gentle lift with enhanced shadow
-
-### 🧠 Learning Platform Page
-- Soft dashboard-style layout
-- Clay info blocks highlighting:
-  - Flexible Classes
-  - Learn From Anywhere
-  - Experienced Teachers
-- Inspirational quote in floating bubble:
-  *"A great lecturer inspires students not just to learn — but to think, explore, and create."*
-- Visual representation of the learning experience
-
-### 📜 Terms & Conditions Page
-- Paper-like rounded sections with soft edges
-- Clearly organized categories:
-  - Admission, Fees & Payments, Attendance
-  - Discipline, Certification, Refund Policy
-- Easy-to-read typography with generous spacing
-- Collapsible sections for better navigation
-
-### 📞 Contact Page
-- Floating contact tiles with icons:
-  - Phone: +91 9441871863
-  - Landline: +91 8819796205
-  - WhatsApp: +91 7981516655
-  - Email: nextcareer9@gmail.com
-  - Instagram: @nextcareer_education
-  - Location: Tanuku
-- Visual contact form (name, email, message fields)
-- Large "Enquire Now" CTA button
-- Embedded map placeholder
-
----
-
-## 🧭 Navigation & Layout
-
-- Sticky header with soft clay styling
-- Logo and institute name on the left
-- Navigation links: Home, About, Courses, Learning, Terms, Contact
-- Mobile: hamburger menu with slide-in drawer
-- Footer with quick links, social icons, and certification badges
-
----
-
-## ✨ Interactions & Animations
-
-- **Buttons**: Gentle inward press on click
-- **Cards**: Soft bounce/lift on hover
-- **Icons**: Subtle floating animation
-- **Page transitions**: Smooth fade-in on load
-- **Scroll effects**: Elements softly appear as you scroll
-
----
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Fluid grid layouts
-- Touch-friendly tap targets
-- Optimized typography scaling
-- Hamburger menu for mobile navigation
+## Result
+Professional team member cards with real photos integrated seamlessly into the claymorphic design, maintaining the soft, rounded aesthetic while elevating the visual credibility of the institute.
 
