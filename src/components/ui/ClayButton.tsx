@@ -29,7 +29,7 @@ const ClayButton = ({
   return (
     <button
       className={cn(
-        "clay-button font-semibold",
+        "clay-button font-semibold inline-flex items-center justify-center",
         variants[variant],
         sizes[size],
         className
