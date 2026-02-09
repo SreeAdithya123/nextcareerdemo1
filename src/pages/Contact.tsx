@@ -49,8 +49,8 @@ const contactInfo = [
   {
     icon: Instagram,
     label: "Instagram",
-    value: "@nextcareer_education",
-    href: "https://instagram.com/nextcareer_education",
+    value: "@nextcareer_educations",
+    href: "https://instagram.com/nextcareer_educations",
     color: "gradient-teal",
   },
   {
