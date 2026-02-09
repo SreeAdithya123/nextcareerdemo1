@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ClayCard from "@/components/ui/ClayCard";
 import ClayBadge from "@/components/ui/ClayBadge";
-
+import studentSupportImg from "@/assets/student-support.png";
 const features = [
   {
     icon: Clock,
@@ -179,7 +179,11 @@ const Learning = () => {
               </ul>
             </div>
             <div className="text-center">
-              <div className="text-8xl bounce-soft">🎓</div>
+              <img 
+                src={studentSupportImg} 
+                alt="Student receiving support" 
+                className="w-64 h-auto rounded-2xl shadow-clay mx-auto bounce-soft"
+              />
             </div>
           </div>
         </ClayCard>
