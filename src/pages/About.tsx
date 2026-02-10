@@ -6,6 +6,9 @@ import ClayBadge from "@/components/ui/ClayBadge";
 
 import saikumarImage from "@/assets/team/saikumar.jpg";
 import satyasriImage from "@/assets/team/satyasri.jpg";
+import qmsLogo from "@/assets/partners/qms.png";
+import euroUkLogo from "@/assets/partners/euro-uk.png";
+import msmeLogo from "@/assets/partners/msme.png";
 
 const teamMembers = [
   {
@@ -188,6 +191,34 @@ const About = () => {
             education accessible to all."
           </p>
         </ClayCard>
+      </section>
+
+      {/* Our Trusted Partners */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Our Trusted Partners
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Affiliations & Collaborations
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { src: qmsLogo, alt: "Quality Management System - ISO 9001:2015" },
+            { src: euroUkLogo, alt: "Euro UK Accreditation Licensing Services" },
+            { src: msmeLogo, alt: "Ministry of MSME, Govt. of India" },
+          ].map((partner, index) => (
+            <ClayCard key={index} className="p-6 flex items-center justify-center bg-white">
+              <img
+                src={partner.src}
+                alt={partner.alt}
+                className="max-h-20 object-contain"
+              />
+            </ClayCard>
+          ))}
+        </div>
       </section>
 
       <Footer />
